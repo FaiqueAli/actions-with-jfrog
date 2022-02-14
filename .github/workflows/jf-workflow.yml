@@ -14,4 +14,4 @@ jobs:
           JF_ARTIFACTORY_SERVER: ${{ secrets.JF_ARTIFACTORY_SECRET_1 }}
       - name: Run JFrog CLI
         run: |
-          run: jfrog --version
+          run: jf --version
