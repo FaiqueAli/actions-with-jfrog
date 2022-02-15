@@ -22,7 +22,7 @@ jobs:
            # Publish build info
            jfrog rt bp
       
-      - uses: actions/checkout@v2
+      - uses: actions/upload-artifact@v2
       - name: upload artifacts       
         run:  jfrog rt u jftest.zip myconanrepo
         
