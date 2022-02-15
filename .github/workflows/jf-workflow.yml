@@ -31,4 +31,4 @@ jobs:
       - name: Download a single artifact
         uses: actions/download-artifact@v1
         with:
-         name: my-artifact
+         name: jftest.zip
