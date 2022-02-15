@@ -23,6 +23,7 @@ jobs:
            jfrog rt bp
            echo github.ref
            echo github.ref_name
+           echo ${{ github.event_name }}
       #- uses: actions/upload-artifact@v2
       #- name: upload artifacts       
       #  run:  jfrog rt u jftest.zip myconanrepo
