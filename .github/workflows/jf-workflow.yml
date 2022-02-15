@@ -21,7 +21,8 @@ jobs:
            jfrog rt bag
            # Publish build info
            jfrog rt bp
-      
+           echo github.ref
+           echo github.ref_name
       #- uses: actions/upload-artifact@v2
       #- name: upload artifacts       
       #  run:  jfrog rt u jftest.zip myconanrepo
