@@ -26,5 +26,9 @@ jobs:
       #- name: upload artifacts       
       #  run:  jfrog rt u jftest.zip myconanrepo
         
-      - name: Download artifact 
-        run: jfrog rt dl myconanrepo/jftest.zip
+      #- name: Download artifact 
+      #  run: jfrog rt dl myconanrepo/jftest.zip
+      - name: Download a single artifact
+        uses: actions/download-artifact@v1
+        with:
+         name: my-artifact
