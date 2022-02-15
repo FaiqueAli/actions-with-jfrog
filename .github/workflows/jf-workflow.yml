@@ -21,5 +21,10 @@ jobs:
            jfrog rt bag
            # Publish build info
            jfrog rt bp
+      
+      - uses: actions/checkout@v2
+      - name: upload artifacts       
+        run:  jfrog rt u jftest.zip myconanrepo
+        
       - name: Download artifact 
         run: jfrog rt dl myconanrepo/jftest.zip
