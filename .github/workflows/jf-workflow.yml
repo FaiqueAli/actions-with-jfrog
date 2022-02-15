@@ -33,7 +33,7 @@ jobs:
       #- name: Download artifact 
       #  run: jfrog rt dl myconanrepo/jftest.zip
       - name: Download a single artifact
-        if: github.event_name == ''
+        if: github.event_name == 'push'
         uses: actions/download-artifact@v1
         with:
          name: jftest.zip
