@@ -1,10 +1,10 @@
 name: "JFrog CLI Example"
-
- on:
-  pull_request:
+ 
+on:
+   pull_request:
      branches: 
       - FaiqueAli-patch-1
-  push:
+   push:
       branches: 
        - main
        - FaiqueAli-patch-1
