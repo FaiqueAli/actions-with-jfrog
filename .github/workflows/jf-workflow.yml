@@ -15,7 +15,7 @@ jobs:
         run: |
           # Collect environment variables for the build
           jfrog rt bce
-          # Collect VCS details from git and add them to the build
+          # Collect VCS details from git and add them to the build 
           jfrog rt bag
           # Publish build info
           jfrog rt bp
