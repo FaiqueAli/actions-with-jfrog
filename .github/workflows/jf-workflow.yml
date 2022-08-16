@@ -4,9 +4,9 @@ on: push
 jobs:
   build:
     #runs-on: ubuntu-latest
-    runs-on: [self-hosted, Debian, dso-codeql-win]
+    runs-on: [self-hosted, dso-codeql-win]
     steps:
-       - name: Checkout
+       - name: Test Selfhosted Docker container
          run: echo 'echo from debian'
 #       - name: Checkout
 #         uses: actions/checkout@v1
