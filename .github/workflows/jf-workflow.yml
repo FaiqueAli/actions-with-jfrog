@@ -1,7 +1,41 @@
 name: "JFrog CLI Example"
-on: push
+ 
+on:
+   pull_request:
+     branches: 
+      - FaiqueAli-patch-1
+   push:
+      branches: 
+       - main
+       - FaiqueAli-patch-1
+
 
 jobs:
+
+  lint:
+    runs-on: self-hosted
+    #ubuntu-latest    
+    steps:
+      
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}   # checkout the correct branch name
+          fetch-depth: 0                # fetch the whole repo history  
+        
+      - name: update git tag
+        run: ."C:\Program Files\Git\bin\bash.exe" ./tag-release.sh --branch FaiqueAli-patch-1 --message first-version-from-workflow --type build
+
+      - name: Upload binaries to release
+        uses: actions/upload-artifact@v3
+        with:
+         name: v-gitactionrepo
+         path: module1
+         #v0.0.0.2 test 
+
+
+          
+
   build:
     #runs-on: ubuntu-latest
     runs-on: [self-hosted, dso-codeql-win]
@@ -41,3 +75,4 @@ jobs:
 #         uses: actions/download-artifact@v1
 #         with:
 #          name: jftest.zip
+
