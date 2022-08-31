@@ -35,7 +35,21 @@ jobs:
 
 
           
-
+      - name: check event name
+        run:  |
+              echo 'github.head_ref:        ${{github.head_ref}}'
+              echo 'ref_name:               ${{github.ref_name}}'
+              echo 'base_ref:               ${{github.base_ref}}'
+              echo 'head_commit.message:    ${{github.event.head_commit.message}}'
+              echo 'event_name:             ${{github.event_name }}'
+              echo 'pull_request.merged:    ${{github.event.pull_request.merged }}'
+              echo 'client_payload.value:    ${{github.event.client_payload.value}}'
+              echo 'github.event.pull_request.title:    ${{github.event.pull_request.title}}'
+              echo "tag ${GITHUB_REF##*/}"
+              echo '----------'
+              echo "tag ${GITHUB_REF}"
+              echo "tag ${GITHUB_REPOSITORY}"
+              echo "tag ${GITHUB_SHA}"
   build:
     #runs-on: ubuntu-latest
     runs-on: [self-hosted, dso-codeql-win]
